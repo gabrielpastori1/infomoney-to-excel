@@ -2,7 +2,7 @@ const { default: axios } = require('axios');
 const ExcelJS = require('exceljs');
 
 const FETCH_SIZE = 50;
-const SLEEP_SECONDS = 5;
+const SLEEP_SECONDS = 2;
 
 async function run() {
   const actionsList = require('./list.json');
@@ -36,7 +36,7 @@ async function run() {
     const row = [];
     row.push(data[0].values[0][0].display);
     for (let j = 0; j < data.length; j++) {
-      row.push(parseFloat(data[j].values[i][2].replace(',', '.')));
+      row.push(parseFloat(data[j].values[i][3].replace(',', '.')));
     }
     sheet.addRow(row);
   }
