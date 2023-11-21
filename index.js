@@ -34,7 +34,7 @@ async function run() {
 
   for (let i = 0; i < FETCH_SIZE; i++) {
     const row = [];
-    row.push(data[0].values[0][0].display);
+    row.push(data[0].values[i][0].display);
     for (let j = 0; j < data.length; j++) {
       row.push(parseFloat(data[j].values[i][3].replace(',', '.')));
     }
